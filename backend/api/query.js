@@ -15,14 +15,20 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: "Method Not Allowed" });
     }
 
-    const HF_API_URL = "https://router.huggingface.co/hf-inference/models/mistralai/Mixtral-8x7B-Instruct-v0.1";
+    const HF_API_URL = "https://router.huggingface.co/v1/chat/completions";
     const HF_API_KEY = process.env.HF_API_KEY;
     //old: const url = "https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1";
     try {
         console.log("REQ BODY:", req.body);
         const response = await axios.post(
             HF_API_URL,
-            req.body,
+            {
+                model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
+                messages: [
+                    { role: "user", content: req.body.inputs }
+                ],
+                max_tokens: 300
+            },
             {
                 headers: {
                     Authorization: `Bearer ${HF_API_KEY}`,
