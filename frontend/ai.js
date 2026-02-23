@@ -7,7 +7,7 @@ You are an assistant that receives a list of ingredients that a user has and sug
 export async function getRecipeFromMistral(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ");
     try {
-        const response = await fetch("https://chef-backend-73jvg2q41-nayanas-projects-db83b834.vercel.app/api/query", { // Ensure correct endpoint
+        const response = await fetch("https://chef-backend-xi.vercel.app/api/query", { // Ensure correct endpoint
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
