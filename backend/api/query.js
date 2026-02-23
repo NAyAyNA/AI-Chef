@@ -31,6 +31,7 @@ export default async function handler(req, res) {
             }
         );
         res.json(response.data);
+        console.log("🔥 QUERY.JS DEPLOYED - HF ROUTER FIXED");
     } catch (err) {
         console.error("Hugging Face API Error:", err.response?.data || err.message);
 
