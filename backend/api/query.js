@@ -28,7 +28,7 @@ export default async function handler(req, res) {
                 messages: [
                     { role: "user", content: req.body.inputs }
                 ],
-                max_tokens: 300
+                max_tokens: 800
             },
             {
                 headers: {
