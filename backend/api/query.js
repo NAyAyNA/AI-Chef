@@ -19,6 +19,7 @@ export default async function handler(req, res) {
     const HF_API_KEY = process.env.HF_API_KEY;
     //old: const url = "https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1";
     try {
+        console.log("REQ BODY:", req.body);
         const response = await axios.post(
             HF_API_URL,
             req.body,
