@@ -26,7 +26,7 @@ export async function getRecipeFromMistral(ingredientsArr) {
 
         const data = await response.json();
         console.log("API Response:", data);
-        return data?.[0]?.generated_text || "No recipe found.";
+        return data?.choices?.[0]?.message?.content || "No recipe found.";
     } catch (err) {
         // More detailed error log
         console.error("Error fetching recipe:", err);
