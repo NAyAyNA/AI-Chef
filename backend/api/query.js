@@ -26,7 +26,7 @@ export default async function handler(req, res) {
             {
                 model: "mistralai/Mistral-7B-Instruct-v0.2",
                 messages: [
-                    { role: "user", content: req.body }
+                    { role: "user", content: req.body.inputs }
                 ],
                 max_tokens: 300
             },
