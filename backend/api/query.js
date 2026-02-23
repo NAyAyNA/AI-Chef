@@ -18,12 +18,13 @@ export default async function handler(req, res) {
     const HF_API_URL = "https://router.huggingface.co/v1/chat/completions";
     const HF_API_KEY = process.env.HF_API_KEY;
     //old: const url = "https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1";
+    //mistralai/Mistral-7B-Instruct-v0.2
     try {
         console.log("REQ BODY:", req.body);
         const response = await axios.post(
             HF_API_URL,
             {
-                model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
+                model: "mistralai/Mistral-7B-Instruct-v0.2",
                 messages: [
                     { role: "user", content: req.body.inputs }
                 ],
